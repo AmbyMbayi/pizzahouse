@@ -26,12 +26,15 @@ Route::get('/pizza', function() {
         
     ];
 
-
-    $name = request('name');
     $age = request('age');
+    $last_name = request('last_name');
 
     
+   return view('pizza', ['pizza' => $pizza, 'name'=> request('name'), 'age'=> $age, 'last_name' => $last_name]);
 
-   return view('pizza', ['pizza' => $pizza, 'name'=> request('name'), 'age'=> $age]);
+});
 
+Route::get('/pizza/{id}', function($id){
+    //use the id variable to questy the db for a record
+    return view('details', ['id'=> $id]);
 });
