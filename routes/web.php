@@ -25,6 +25,13 @@ Route::get('/pizza', function() {
 
         
     ];
-   return view('pizza', ['pizza' => $pizza]);
+
+
+    $name = request('name');
+    $age = request('age');
+
+    
+
+   return view('pizza', ['pizza' => $pizza, 'name'=> request('name'), 'age'=> $age]);
 
 });
