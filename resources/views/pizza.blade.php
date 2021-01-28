@@ -14,6 +14,15 @@
     <p>{{ $firstname }}</p>
     <p>{{ $type }}</p>
 
+    @if($price > 10)
+    <p>name does not exist</p>
+    @elseif($price < 5) <p>this pizza is cheap</p>
+
+        @endif
+        @unless ($firstname=='amby')
+        <p>you dont have amby</p>
+        @endunless
+
 </body>
 
 </html>
