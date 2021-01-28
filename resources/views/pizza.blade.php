@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h2>Piza list</h2>
+<h2 class="header">Piza list</h2>
 @for ($i = 0; $i < count($pizza); $i++) <p>{{ $pizza[$i]['type'] }}</p>
     @endfor
 
