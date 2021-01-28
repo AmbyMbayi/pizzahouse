@@ -9,19 +9,19 @@
 </head>
 
 <body>
-    <h2>Pizza Hub</h2>
-    <p>{{ $company }}</p>
-    <p>{{ $firstname }}</p>
-    <p>{{ $type }}</p>
 
-    @if($price > 10)
-    <p>name does not exist</p>
-    @elseif($price < 5) <p>this pizza is cheap</p>
+    @for ($i = 0; $i < 5; $i++) <p>the value of i is {{ $i }}</p>
+        @endfor
 
-        @endif
-        @unless ($firstname=='amby')
-        <p>you dont have amby</p>
-        @endunless
+        @for ($i = 0; $i < count($pizza); $i++) <p>{{ $pizza[$i]['type'] }}</p>
+            @endfor
+
+            @foreach ($pizza as $piz)
+            <div>
+                {{ $loop->index }} {{ $piz['type'] }} - {{ $piz['base'] }}
+            </div>
+            @endforeach
+
 
 </body>
 
