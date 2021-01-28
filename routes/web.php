@@ -18,5 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/pizza', function() {
-    return view('pizza');
+    //return view('pizza');
+
+    //return 'prizza hub';
+    return ['pizza' => 'veg pizzas', 'first_name'=> 'Amby', 'second_name'=> 'Mbayi'];
 });
