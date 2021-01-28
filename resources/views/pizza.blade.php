@@ -10,17 +10,16 @@
 
 <body>
 
-    @for ($i = 0; $i < 5; $i++) <p>the value of i is {{ $i }}</p>
+
+
+    @for ($i = 0; $i < count($pizza); $i++) <p>{{ $pizza[$i]['type'] }}</p>
         @endfor
 
-        @for ($i = 0; $i < count($pizza); $i++) <p>{{ $pizza[$i]['type'] }}</p>
-            @endfor
-
-            @foreach ($pizza as $piz)
-            <div>
-                {{ $loop->index }} {{ $piz['type'] }} - {{ $piz['base'] }}
-            </div>
-            @endforeach
+        @foreach ($pizza as $piz)
+        <div>
+            {{ $loop->index }} {{ $piz['type'] }} - {{ $piz['base'] }}
+        </div>
+        @endforeach
 
 
 </body>
