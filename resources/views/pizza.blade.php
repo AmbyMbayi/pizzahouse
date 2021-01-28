@@ -10,6 +10,10 @@
 
 <body>
     <h2>Pizza Hub</h2>
+    <p>{{ $company }}</p>
+    <p>{{ $firstname }}</p>
+    <p>{{ $type }}</p>
+
 </body>
 
 </html>
