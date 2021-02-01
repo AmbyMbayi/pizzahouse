@@ -19,10 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzas', [PizzaController::class,'index']);
+Route::get('/pizzas', [PizzaController::class,'index'])-> middleware('auth');
 Route::post('/pizzas', [PizzaController::class,'store']);
-Route::get('/pizzas/create', [PizzaController::class, 'create']);
-Route::get('/pizzas/{id}', [PizzaController::class,'show']);
+Route::get('/pizzas/create', [PizzaController::class, 'create'])-> middleware('auth');
+Route::get('/pizzas/{id}', [PizzaController::class,'show']) -> middleware('auth');
 Route::delete('/pizzas/{id}', [PizzaController::class,'destroy']);
 
 
