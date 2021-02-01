@@ -4,12 +4,10 @@
 
 
 <h2 class="header">Piza list</h2>
-@for ($i = 0; $i < count($pizza); $i++) <p>{{ $pizza[$i]['type'] }}</p>
-    @endfor
 
-    @foreach ($pizza as $piz)
+    @foreach ($pizzas as $pizza)
     <div>
-        {{ $loop->index }} {{ $piz['type'] }} - {{ $piz['base'] }}
+       {{$pizza-> name}} - {{$pizza-> type}} - {{$pizza ->base}}
     </div>
     @endforeach
 

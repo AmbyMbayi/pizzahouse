@@ -3,20 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
     //
     public function index(){
-        $pizza =  [
-            ['type'=> 'hawaiian', 'base'=> 'cheesy crust'],
-            ['type'=> 'volcano', 'base'=> 'garlic crust'],
-            ['type'=> 'veg supreme', 'base'=> 'thin & crispy']
-    
-          ];
-       
+        //$pizzas = Pizza::all();
+        //$pizzas = Pizza::orderBy('name', 'dec')->get();
+        $pizzas = Pizza::where('type', 'bazuu')->get();
+        //$pizzas = Pizza::latest();
          return view('pizza', [
-             'pizza' => $pizza, 
+             'pizzas' => $pizzas, 
          ]);
       
     }
