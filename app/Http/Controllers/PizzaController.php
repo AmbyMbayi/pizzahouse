@@ -11,8 +11,8 @@ class PizzaController extends Controller
     public function index(){
         //$pizzas = Pizza::all();
         //$pizzas = Pizza::orderBy('name', 'dec')->get();
-        $pizzas = Pizza::where('type', 'bazuu')->get();
-        //$pizzas = Pizza::latest()->get();
+        //$pizzas = Pizza::where('type', 'bazuu')->get();
+        $pizzas = Pizza::latest()->get();
          return view('pizzas.index', [
              'pizzas' => $pizzas, 
          ]);
@@ -28,12 +28,16 @@ class PizzaController extends Controller
     }
     public function store(){
 
-        error_log(request('name'));
-        error_log(request('type'));
-        error_log(request('price'));
-        error_log(request('base'));
+        $pizza = new Pizza();
+        $pizza->name = request('name');
+        $pizza->type = request('type');
+        $pizza->base = request('base');
+        $pizza->price = request('price');
 
-        return redirect('/pizzas');
+        //error_log($pizza);
+        $pizza->save(); 
+
+        return redirect('/pizzas')->with('message', 'Thanks for your order');
 
     }
 }
