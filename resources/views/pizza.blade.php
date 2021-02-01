@@ -15,8 +15,3 @@
 
     @endsection
 
-
-
-    <h1>{{ $name }}</h1>
-    <h2>{{ $age }}</h2>
-    <h2>{{ $last_name }}</h2>
