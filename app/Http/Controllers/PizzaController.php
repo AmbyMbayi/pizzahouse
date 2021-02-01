@@ -12,7 +12,7 @@ class PizzaController extends Controller
         //$pizzas = Pizza::all();
         //$pizzas = Pizza::orderBy('name', 'dec')->get();
         $pizzas = Pizza::where('type', 'bazuu')->get();
-        //$pizzas = Pizza::latest();
+        //$pizzas = Pizza::latest()->get();
          return view('pizza', [
              'pizzas' => $pizzas, 
          ]);
