@@ -19,6 +19,6 @@
         <button>Complete Order</button>
     </form>
 </div>
-<a href="/pizza" class="back">Back to all Pizza</a>
+<a href="/pizza" class="back">Back to Pizza List</a>
 
 @endsection
